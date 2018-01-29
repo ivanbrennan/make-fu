@@ -1,5 +1,7 @@
-math : main.o sum.o constants.o
-	gcc -o math main.o sum.o constants.o
+objects = main.o sum.o constants.o
+
+math : $(objects)
+	gcc -o math $(objects)
 
 main.o : main.c constants.h sum.h
 	gcc -c main.c
@@ -11,4 +13,4 @@ constants.o : constants.c constants.h
 	gcc -c constants.c
 
 clean :
-	rm math main.o sum.o constants.o
+	rm math $(objects)
