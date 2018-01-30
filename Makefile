@@ -7,5 +7,6 @@ main.o : constants.h sum.h
 sum.o : sum.h
 constants.o : constants.h
 
+.PHONY : clean
 clean :
 	rm math $(objects)
