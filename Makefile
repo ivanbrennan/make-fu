@@ -9,4 +9,4 @@ constants.o : constants.h
 
 .PHONY : clean
 clean :
-	rm math $(objects)
+	-rm math $(objects)
