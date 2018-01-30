@@ -3,8 +3,9 @@ objects = main.o sum.o constants.o
 math : $(objects)
 	cc -o math $(objects)
 
-$(objects) : constants.h
-main.o sum.o : sum.h
+main.o : constants.h sum.h
+sum.o : constants.h sum.h
+constants.o : constants.h
 
 .PHONY : clean
 clean :
