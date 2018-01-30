@@ -4,10 +4,11 @@
 
 int main(void)
 {
-	int x, y;
+	int x, y, z;
 	x = a();
 	y = b();
+	z = e();
 
-	printf("%d + %d = %d", x, y, sum(x, y));
+	printf("%d + %d + %d = %d", x, y, z, sum(x, y));
 	return 0;
 }

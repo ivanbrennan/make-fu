@@ -9,3 +9,8 @@ int b(void)
 {
 	return 7;
 }
+
+int e(void)
+{
+	return 1;
+}

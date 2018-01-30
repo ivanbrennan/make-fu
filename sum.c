@@ -1,6 +1,8 @@
 #include "sum.h"
+#include "constants.h"
 
 int sum(int a, int b)
 {
-	return a + b;
+	int extra = e();
+	return a + b + extra;
 }
