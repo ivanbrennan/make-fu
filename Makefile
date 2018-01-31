@@ -1,7 +1,7 @@
 objects = main.o sum.o constants.o
 
 math : $(objects)
-	cc -o math $(objects)
+	cc -o $@ $^
 
 main.o : constants.h sum.h
 sum.o : constants.h sum.h
