@@ -16,4 +16,8 @@ constants.o : constants.h
 
 .PHONY : clean
 clean :
+	@echo "Cleaning..."
+#                       @ tells `make` not to print the command,
+#                       just run it, unless the --dry-run / -n
+#                       flag was given, in which case print it.
 	-rm math main.o
