@@ -15,6 +15,16 @@ constants.o : constants.h
 #   foo.o : ...
 #        cc -c foo.c
 
+# This tells make to delete any target whose recipe fails partway through (e.g. bad command or
+# shell killed by signal). It's the behavior you want in most cases, to prevent make from thinking
+# the target is up to date, but in the interest of backward compatibility it's not the default.
+.DELETE_ON_ERROR :
+
+bork :
+	echo "bork-1" > bork
+	rm nonexistentfile
+	echo "bork-2" >> bork
+
 .PHONY : clean
 clean :
 	@echo "Cleaning..."
