@@ -1,6 +1,7 @@
 objects = main.o sum.o constants.o
 
-VPATH = lib
+# search for shared libaries in lib/
+vpath lib%.so lib
 
 math : $(objects) -lshareme
 	cc -o $@ $^
