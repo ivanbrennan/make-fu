@@ -16,7 +16,7 @@ sum.o : constants.h sum.h
 constants.o : constants.h
 # implicit rule
 #   foo.o : ...
-#        cc -c foo.c
+#        cc -c foo.o foo.c
 
 .PHONY : lib
 lib :
