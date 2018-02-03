@@ -1,7 +1,10 @@
 objects = main.o sum.o constants.o
+libdir = lib
 
 # search for shared libaries in lib/
-vpath lib%.so lib
+vpath lib%.so $(libdir)
+
+all : lib math
 
 math : $(objects) -lshareme
 	cc -o $@ $^
@@ -14,6 +17,10 @@ constants.o : constants.h
 # implicit rule
 #   foo.o : ...
 #        cc -c foo.c
+
+.PHONY : lib
+lib :
+	$(MAKE) -C $(libdir)
 
 # This tells make to delete any target whose recipe fails partway through (e.g. bad command or
 # shell killed by signal). It's the behavior you want in most cases, to prevent make from thinking
@@ -32,3 +39,7 @@ clean :
 #                       just run it, unless the --dry-run / -n
 #                       flag was given, in which case print it.
 	-rm math $(objects)
+
+.PHONY : cleanall
+cleanall : clean
+	$(MAKE) -C $(libdir) clean
