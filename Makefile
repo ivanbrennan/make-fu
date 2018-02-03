@@ -1,5 +1,5 @@
 objects = main.o sum.o constants.o
-libdir = lib
+libdir = $(CURDIR)/lib
 
 # search for shared libaries in lib/
 vpath lib%.so $(libdir)
